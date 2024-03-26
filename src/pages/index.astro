@@ -1,6 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
+import TwoPicGrid from '../components/TwoPicGrid.astro'
+import ThreePicGrid from '../components/ThreePicGrid.astro'
+
+import OnePicGridWithText from '../components/OnePicGridWithText.astro'
+
+import ThreePicGridWithCenterText from '../components/ThreePicGridWithCenterText.astro'
+
+const twoPicGrid1 = ['/images/exterior1.jpg', '/images/exterior2.jpg']
+const twoPicGrid2 = ['/images/exterior3.jpg']
+const threePicGrid3 = [
+  '/images/exterior4.jpg',
+  '/images/exterior5.jpg',
+  '/images/exterior6.jpg',
+]
+
+const twoPicInteriorGrid1 = [
+  '/images/interior1-01.jpg',
+  '/images/interior1-02.jpg',
+]
+const twoPicInteriorGrid2 = ['/images/interior1-03.jpg']
+
+const threePicInteriorGrid3 = [
+  '/images/interior1-04.jpg',
+  '/images/interior1-05.jpg',
+  '/images/interior1-06.jpg',
+]
+
+const twoPicInteriorGrid4 = [
+  '/images/interior2-01.jpg',
+  '/images/interior2-02.jpg',
+]
+
+const twoPicInteriorGrid5 = ['/images/interior2-03.jpg']
+
+const twoPicInteriorGrid6 = [
+  '/images/interior2-04.jpg',
+  '/images/interior2-05.jpg',
+]
+
+const threePicWorkshed1 = [
+  '/images/barn-01.jpg',
+  '/images/barn-02.jpg',
+  '/images/barn-03.jpg',
+]
+const onePicWorkshed2 = ['/images/barn-04.jpg']
+const twoPicWorkshed3 = ['/images/barn-05.jpg', '/images/barn-06.jpg']
+
+const twoPicPond1 = ['/images/pond-01.jpg', '/images/pond-02.jpg']
+const onePicPond2 = ['/images/pond-03.jpg']
+const twoPicPond3 = ['/images/pond-04.jpg', '/images/pond-05.jpg']
+
+const twoPicOutdoors1 = [
+  '/images/playing-outdoors-01.jpg',
+  '/images/playing-outdoors-02.jpg',
+]
+const onePicOutdoors2 = ['/images/playing-outdoors-03.jpg']
+const twoPicOutdoors3 = [
+  '/images/playing-outdoors-04.jpg',
+  '/images/playing-outdoors-05.jpg',
+]
+
+const threePicViews1 = [
+  '/images/views01.jpg',
+  '/images/views02.jpg',
+  '/images/views03.jpg',
+]
+
+const twoPicViews2 = ['/images/views04.jpg', '/images/views05.jpg']
+
+const threePicViews3 = [
+  '/images/views06.jpg',
+  '/images/views07.jpg',
+  '/images/views08.jpg',
+]
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -30,5 +103,120 @@ import Card from '../components/Card.astro'
         >https://my.matterport.com/show/?m=4Dfh5ELJ1pJ</a
       >
     </h2>
+    <div class='flex justify-center items-center py-5'>
+      <div class='flex flex-col md:flex-row'>
+        <div class='p-4 flex-1 min-w-60'>
+          <h3 class='text-2xl'>Main level</h3>
+          <ul class='list-disc text-left'>
+            <li>Living Room 25 x 15</li>
+            <li>Family Room 23x 15</li>
+            <li>Reading Room 20 x 14</li>
+            <li>Main Bedroom 31 x 15</li>
+            <li>Guest Bedroom 13.5 x 12</li>
+            <li>Dining Room 18 x 13</li>
+            <li>Kitchen with Pantry</li>
+            <li>Breakfast Nook</li>
+            <li>Office</li>
+          </ul>
+        </div>
+        <div class='min-w-60 p-4 flex-1'>
+          <h3 class='text-2xl'>Lower level</h3>
+          <ul class='list-disc text-left'>
+            <li>Game Room 15 x 32</li>
+            <li>Bedroom 14 x 11</li>
+            <li>Bedroom 17 x 12</li>
+            <li>Bedroom 14 x 10</li>
+            <li>Family Room 34 x 26</li>
+            <li>750 sq ft of Storage</li>
+            <li>Wine Room</li>
+            <li>Gun Room</li>
+            <li>Utilities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exterior -->
+    <div class='max-w-4xl mx-auto'>
+      <TwoPicGrid srcs={twoPicGrid1} name='Exterior1' />
+      <OnePicGridWithText srcs={twoPicGrid2} name='Exterior2' text='Exterior' />
+      <ThreePicGrid srcs={threePicGrid3} name='Exterior3' />
+
+      <hr class='border-t-4 border-dashed border-purple-500 py-1 my-4 mx-5' />
+    </div>
+
+    <!-- Interior -->
+    <div class='max-w-4xl mx-auto'>
+      <TwoPicGrid srcs={twoPicInteriorGrid1} name='Interor1' />
+      <OnePicGridWithText
+        srcs={twoPicInteriorGrid2}
+        name='Interior2'
+        text='Interior'
+      />
+      <ThreePicGrid srcs={threePicInteriorGrid3} name='Interior3' />
+
+      <hr class='border-t-4 border-dashed border-gray-300 py-1 my-4 mx-5' />
+    </div>
+
+    <!-- Interior 2 -->
+    <div class='max-w-4xl mx-auto'>
+      <TwoPicGrid srcs={twoPicInteriorGrid4} name='Interor2' />
+      <OnePicGridWithText
+        srcs={twoPicInteriorGrid5}
+        name='Interior2'
+        text='Interior'
+      />
+      <TwoPicGrid srcs={twoPicInteriorGrid6} name='Interior3' />
+
+      <hr class='border-t-4 border-dashed py-1 my-4 mx-5' />
+    </div>
+
+    <!-- Barn Work Shed -->
+    <div class='max-w-4xl mx-auto'>
+      <ThreePicGrid srcs={threePicWorkshed1} name='Barn' />
+      <OnePicGridWithText
+        srcs={onePicWorkshed2}
+        name='Barn'
+        text='Barn and Work Shed'
+      />
+      <TwoPicGrid srcs={twoPicWorkshed3} name='Barn' />
+
+      <hr class='border-t-4 border-dashed py-1 my-4 mx-5' />
+    </div>
+
+    <!-- Pond -->
+    <div class='max-w-4xl mx-auto'>
+      <TwoPicGrid srcs={twoPicPond1} name='Pond' />
+      <OnePicGridWithText srcs={onePicPond2} name='Pond' text='Pond' />
+      <TwoPicGrid srcs={twoPicPond3} name='Pond' />
+
+      <hr class='border-t-4 border-dashed py-1 my-4 mx-5' />
+    </div>
+
+    <!-- OutdoorLiving -->
+    <div class='max-w-4xl mx-auto'>
+      <TwoPicGrid srcs={twoPicOutdoors1} name='Outdoor' />
+      <OnePicGridWithText
+        srcs={onePicOutdoors2}
+        name='Outdoors'
+        text='Outdoor Living'
+      />
+      <TwoPicGrid srcs={twoPicOutdoors3} name='Outdoor' />
+
+      <hr class='border-t-4 border-dashed py-1 my-4 mx-5' />
+    </div>
+
+    <!-- Views -->
+    <div class='max-w-4xl mx-auto'>
+      <ThreePicGrid srcs={threePicViews1} name='Views' />
+      <ThreePicGridWithCenterText
+        srcs={twoPicViews2}
+        name='Views'
+        text='Views'
+      />
+      <ThreePicGrid srcs={threePicViews3} name='Views' />
+
+      <hr class='border-t-4 border-dashed py-1 my-4 mx-5' />
+    </div>
   </main>
 </Layout>

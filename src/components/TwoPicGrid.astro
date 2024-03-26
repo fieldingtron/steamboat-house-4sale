@@ -1,0 +1,19 @@
+---
+// TwoPicGrid.astro
+// Define props
+interface Props {
+  srcs: string[]
+  name: string
+}
+
+const { srcs, name } = Astro.props as Props
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 mx-5">
+  {srcs.map((src, index) => (
+    <div class="bg-gray-200" >
+      <!-- Assuming a generic alt text; modify as needed -->
+      <img src={src} alt={`${name} ${index + 1}`} class="object-cover h-48 w-full " />
+    </div>
+  ))}
+</div>

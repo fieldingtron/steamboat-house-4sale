@@ -1,0 +1,24 @@
+---
+// Define props
+interface Props {
+  srcs: string[]
+  name: string
+  text: string
+}
+
+const { srcs, name, text } = Astro.props as Props
+---
+
+<div class='grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 mx-5'>
+  <div class='bg-gray-200'>
+    <!-- Assuming a generic alt text; modify as needed -->
+    <img src={srcs[0]} alt={`${name} 1`} class='object-cover h-48 w-full' />
+  </div>
+  <div class='flex justify-center items-center'>
+    <h2 class='text-6xl'>{text}</h2>
+  </div>
+  <div class='bg-gray-200'>
+    <!-- Assuming a generic alt text; modify as needed -->
+    <img src={srcs[1]} alt={`${name} 2`} class='object-cover h-48 w-full' />
+  </div>
+</div>
