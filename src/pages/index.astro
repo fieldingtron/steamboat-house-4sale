@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro'
 import TwoPicGrid from '../components/TwoPicGrid.astro'
 import ThreePicGrid from '../components/ThreePicGrid.astro'
 
+import Contact from "../components/Contact.astro"
+
 import OnePicGridWithText from '../components/OnePicGridWithText.astro'
 
 import ThreePicGridWithCenterText from '../components/ThreePicGridWithCenterText.astro'
@@ -345,14 +347,18 @@ const threePicViews3 = [
 
     <!-- Contact Form-->
 
-    <div class='flex justify-center items-center py-5'>
+    <!-- <div class='flex justify-center items-center py-5'>
 			<div>
 
       <h4>Contact Form</h4>
 			<p>
       NAME CITY, STATE PHONE NUMBER EMAIL ADDRESS</p>
+
 			</div>
-    </div>
+    </div> -->
+
+		<Contact/>
+
 
 		<!--Contact Me -->
     <div class='flex justify-center items-center py-5'>
