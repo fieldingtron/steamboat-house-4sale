@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine Test</title>
+  <script src="//unpkg.com/alpinejs@3" defer></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body>
+
+  <div class="container max-w-xl mx-auto">
+    <div x-data="{open:false, name:'yuri'}">
+
+      <button class="py-5 px-3 bg-purple-800 text-white rounded-2xl hover:bg-slate-500 my-3" @click="open=!open">Here we
+        go</button>
+      <div x-show="open">
+
+        <p class="bg-green-600 text-white rounded-lg my-5 p-3">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut et sit debitis distinctio placeat illum, iusto
+          omnis corporis doloribus accusantium beatae voluptatem ut facere incidunt! Excepturi aperiam reprehenderit
+          pariatur voluptate?
+        </p>
+
+      </div>
+      <div class="my-3">
+        The value of the name is <span x-text="name" class="font-bold">
+
+        </span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
