@@ -1,4 +1,4 @@
-# Astro Website  to promote steamboat house for sale by owners
+# Astro Website to promote steamboat house for sale by owners
 
 ## 🧞 Commands
 
@@ -17,4 +17,16 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-yes
+## Configuration
+
+- Google Tag ID: Set `PUBLIC_GOOGLE_TAG_ID` to configure the Google tag (Analytics/Ads) ID. Defaults to `AW-16679746682` if not set.
+
+### Local development
+
+Create a `.env` file in the project root:
+
+```
+PUBLIC_GOOGLE_TAG_ID=AW-16679746682
+```
+
+Astro exposes `PUBLIC_` prefixed env vars to the client. The layout reads this value and injects it into the `gtag.js` loader and `gtag('config', ...)` call.
