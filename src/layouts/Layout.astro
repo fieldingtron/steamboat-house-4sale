@@ -1,11 +1,15 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title: string
 }
 const { title } = Astro.props
 const tagId = import.meta.env.PUBLIC_GOOGLE_TAG_ID ?? 'AW-16679746682'
 ---
-<!DOCTYPE html>
+
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -19,20 +23,18 @@ const tagId = import.meta.env.PUBLIC_GOOGLE_TAG_ID ?? 'AW-16679746682'
       content='Steamboat Springs, Colorado house for Sale'
     />
     <title>{title}</title>
-    <script src='//unpkg.com/alpinejs@3' defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`}></script>
+    <script define:vars={{ tagId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', tagId);
+    </script>
+    <script src="https://unpkg.com/alpinejs@3" defer></script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`}
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-
-    gtag('config', {JSON.stringify(tagId)})
-  </script>
   <body class='bg-sky-300 text-black'>
     <div class='container mx-auto py-4 px-4'>
       <slot />
